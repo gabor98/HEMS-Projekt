@@ -7,7 +7,6 @@ namespace App\Http\Controllers;
 use App\Models\Drink;
 use App\Models\Menu;
 use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Http\Request;
