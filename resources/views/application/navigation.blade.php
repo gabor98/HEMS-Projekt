@@ -33,27 +33,27 @@
 
             <ul class="space-y-2">
                 <li>
-                    <a href="{{ route('shop.index', ['type' => 'menu']) }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
+                    <a href="{{ route('shop.menus') }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
                         Tages Menu
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('shop.index', ['type' => 'menu']) }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
+                    <a href="{{ route('shop.menus') }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
                         Gesundes Essen
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('shop.index', ['type' => 'menu']) }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
+                    <a href="{{ route('shop.menus') }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
                         Snacks
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('shop.index', ['type' => 'menu']) }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
+                    <a href="{{ route('shop.menus') }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
                         Desert
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('shop.index', ['type' => 'menu']) }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
+                    <a href="{{ route('shop.menus') }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
                         Mittagessen
                     </a>
                 </li>
@@ -65,17 +65,17 @@
 
             <ul class="space-y-2">
                 <li>
-                    <a href="{{ route('shop.index', ['type' => 'drink']) }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
+                    <a href="{{ route('shop.drinks') }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
                         Softgetränke
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('shop.index', ['type' => 'drink']) }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
+                    <a href="{{ route('shop.drinks') }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
                         Fruchtgetränke
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('shop.index', ['type' => 'drink']) }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
+                    <a href="{{ route('shop.drinks') }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
                         Aufgussgetränke
                     </a>
                 </li>
