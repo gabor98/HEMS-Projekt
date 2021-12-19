@@ -32,11 +32,31 @@
             <p class="font-semibold mb-4 text-gray-600 tracking-wide">Kategorien</p>
 
             <ul class="space-y-2">
-                <li><a href="#!" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">Tages Menu</a></li>
-                <li><a href="#!" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">Gesundes Essen</a></li>
-                <li><a href="#!" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">Snacks</a></li>
-                <li><a href="#!" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">Desert</a></li>
-                <li><a href="#!" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">Mittagessen</a></li>
+                <li>
+                    <a href="{{ route('shop.index', ['type' => 'menu']) }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
+                        Tages Menu
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('shop.index', ['type' => 'menu']) }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
+                        Gesundes Essen
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('shop.index', ['type' => 'menu']) }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
+                        Snacks
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('shop.index', ['type' => 'menu']) }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
+                        Desert
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('shop.index', ['type' => 'menu']) }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
+                        Mittagessen
+                    </a>
+                </li>
             </ul>
         </div>
 
@@ -44,9 +64,21 @@
             <p class="font-semibold mb-4">Getränke</p>
 
             <ul class="space-y-2">
-                <li><a href="#!" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">Softgetränke</a></li>
-                <li><a href="#!" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">Fruchtgetränke</a></li>
-                <li><a href="#!" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">Aufgussgetränke</a></li>
+                <li>
+                    <a href="{{ route('shop.index', ['type' => 'drink']) }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
+                        Softgetränke
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('shop.index', ['type' => 'drink']) }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
+                        Fruchtgetränke
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('shop.index', ['type' => 'drink']) }}" class="block text-gray-500 transform hover:text-gray-700 hover:translate-x-1 transition-all ease-linear">
+                        Aufgussgetränke
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
