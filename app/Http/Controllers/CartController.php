@@ -28,6 +28,7 @@ class CartController extends Controller
 
         return view('pages.cart.index', [
             'products' => $products,
+            'price' => $this->calculatePrice($products),
         ]);
     }
 
@@ -62,5 +63,22 @@ class CartController extends Controller
 
         return redirect()
             ->route('cart.index');
+    }
+
+    /**
+     * Calculate max price
+     * 
+     * @param array $products 
+     * @return float
+     */
+    private function calculatePrice(array $products): float
+    {
+        $price = 0;
+
+        foreach ($products as $product) {
+            $price += $product->price;
+        }
+
+        return $price;
     }
 }
