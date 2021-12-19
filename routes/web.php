@@ -22,7 +22,13 @@ Route::middleware('web')->group(function() {
     });
 
     Route::prefix('/shop')->group(function() {
-        Route::get('/{type?}', [ShopController::class, 'index'])->name('shop.index');
+        Route::get('/', function() {
+            return redirect()->route('index');
+        });
+        
+        Route::get('/drinks', [ShopController::class, 'drinks'])->name('shop.drinks');
+        Route::get('/menus', [ShopController::class, 'menus'])->name('shop.menus');
+
         Route::post('/', [ShopController::class, 'storeShoppingCart'])->name('shop.addCart');
     });
 });
