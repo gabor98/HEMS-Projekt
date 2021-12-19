@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\View\View;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -14,64 +14,21 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(): View
+    public function index(Request $request)
     {
-        return view('pages.cart.index');
-    }
+        /** @var array $products */
+        $products = $request
+            ->session()
+            ->get('cart');
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+        if (empty($products)) {
+            return redirect()
+                ->route('index');
+        }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        return view('pages.cart.index', [
+            'products' => $products,
+        ]);
     }
 
     /**
@@ -80,8 +37,30 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(int $id, Request $request)
     {
-        //
+        /** @var null|array $products */
+        $products = $request
+            ->session()
+            ->get('cart');
+
+        // Redirect if cart is empty
+        if ($products === null) {
+            return redirect()
+                ->route('index');
+        }
+
+        foreach ($products as $index => $product) {
+            if ($product->id !== $id) {
+                continue;
+            }
+
+            $products = array_splice($products, $index, 1);
+        }
+
+        Session::put('cart', $products);
+
+        return redirect()
+            ->route('cart.index');
     }
 }
