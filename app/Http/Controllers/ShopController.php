@@ -14,43 +14,34 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
-use Symfony\Component\Routing\Exception\RouteNotFoundException;
 
 class ShopController extends Controller
 {
     /**
-     * Shop product list page
+     * List all drink shop items
      * 
-     * @param string $type 
-     * @return View|Factory|RedirectResponse 
+     * @return View 
      * @throws BindingResolutionException 
-     * @throws RouteNotFoundException 
      */
-    public function index(string $type = '')
+    public function drinks(): View
     {
-        if (empty($type)) {
-            return redirect()
-                ->route('index');
-        }
-
-        if ($type !== 'drink' && $type !== 'menu') {
-            return redirect()
-                ->route('index');
-        }
-
-        // List all drink items 
-        if ($type === 'drink') {
-            $products = Drink::paginate(15);
-        }
-
-        // List all menu items
-        if ($type === 'menu') {
-            $products = Menu::paginate(15);
-        }
-
         return view('pages.shop.index', [
-            'products'  => $products,
-            'type'      => $type,
+            'type' => 'drink',
+            'products' => Drink::paginate(15),
+        ]);
+    }
+
+    /**
+     * List all menu shop items
+     * 
+     * @return View 
+     * @throws BindingResolutionException 
+     */
+    public function menus(): View
+    {
+        return view('pages.shop.index', [
+            'type' => 'menu',
+            'products' => Menu::paginate(15),
         ]);
     }
 
