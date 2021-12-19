@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Drink;
 use App\Models\Menu;
+use App\Services\Shop\CategoryService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\Container\BindingResolutionException;
@@ -22,11 +23,12 @@ class ShopController extends Controller
      * @return View 
      * @throws BindingResolutionException 
      */
-    public function drinks(): View
+    public function drinks(CategoryService $categoryService): View
     {
         return view('pages.shop.index', [
             'type' => 'drink',
             'products' => Drink::paginate(15),
+            'categories' => $categoryService->mapDrinkCategories(),
         ]);
     }
 
